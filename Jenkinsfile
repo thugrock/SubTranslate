@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('SCM'){
             steps{
-                git 'https://github.com/thugrock/SubErate.git'
+                git 'https://github.com/thugrock/SubTranslate.git'
             }
         }
         stage('Build requirements'){
@@ -14,14 +14,14 @@ pipeline{
         }
         stage('Docker Build') {
             steps {
-      	        sh '  docker build -t thugrock/suberate:latest .'
+      	        sh '  docker build -t thugrock/subtranslate:latest .'
             }
         }
         stage('Pushing image to Hub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'DockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                sh 'docker push thugrock/suberate:latest'
+                sh 'docker push thugrock/subtranslate:latest'
                 }
             }
         }

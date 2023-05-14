@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: suberate
+  name: subtranslate
 spec:
   selector:
     matchLabels:
-      app: suberate
+      app: subtranslate
   replicas: 2
   template:
     metadata:
       labels:
-        app: suberate
+        app: subtranslate
     spec:
       containers:
-        - name: suberate
-          image: gcr.io/promising-cairn-386312/suberate:latest
+        - name: subtranslate
+          image: gcr.io/promising-cairn-386312/subtranslate:latest
           ports:
             - containerPort: 8501

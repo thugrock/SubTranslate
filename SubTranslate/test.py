@@ -32,7 +32,7 @@ st.title("Subtitle Translator")
 subtitle_path = st.file_uploader("Upload subtitle file (.srt)", type="srt")
 if subtitle_path:
     # Create a temporary file path
-    temp_file_path = os.path.join("/tmp", subtitle_path.name)
+    temp_file_path = os.path.join(os.getcwd(), subtitle_path.name)
 
     # Save the uploaded file data to the temporary file
     with open(temp_file_path, "wb") as f:

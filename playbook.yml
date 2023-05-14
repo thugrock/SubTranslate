@@ -1,12 +1,12 @@
 ---
-- name: Pull and Run docker image of SubErate
+- name: Pull and Run docker image of SubTranslate
   hosts: all
   tasks:
     - name: pull docker image
-      shell: docker pull thugrock/suberate:latest
+      shell: docker pull thugrock/subtranslate:latest
     - name: run docker image and run tests
-      shell: docker run -p 8501:8501 -td --rm thugrock/suberate
+      shell: docker run -p 8501:8501 -td --rm thugrock/subtranslate
     - name: tag and push docker image to GCR
-      shell: docker tag thugrock/suberate 'gcr.io/promising-cairn-386312/suberate:latest' && docker push gcr.io/promising-cairn-386312/suberate:latest
+      shell: docker tag thugrock/subtranslate 'gcr.io/promising-cairn-386312/subtranslate:latest' && docker push gcr.io/promising-cairn-386312/subtranslate:latest
 
 
