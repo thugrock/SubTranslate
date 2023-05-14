@@ -1,0 +1,11 @@
+huggingface-hub
+transformers
+streamlit
+argparse
+ffmpeg
+typing
+translate
+pysrt
+setuptools
+openai-whisper
+pytube

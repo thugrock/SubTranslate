@@ -1,0 +1,8 @@
+streamlit
+argparse
+ffmpeg
+typing
+translate
+pysrt
+setuptools
+pytube
